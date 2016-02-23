@@ -31,3 +31,15 @@ nextPal(2541) == 2552
 
 ////////////////////////
 
+/*
+adak === 1
+anane === 2
+
+amazonCounting(1) // 'anane'
+amazonCounting(2) // 'adak'
+amazonCounting(13) // 'adak adak adak adak adak adak anane'
+
+No trailing spaces!
+*/
+
+/////////////////////////
