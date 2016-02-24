@@ -32,8 +32,8 @@ nextPal(2541) == 2552
 ////////////////////////
 
 /*
-adak === 1
-anane === 2
+'anane' === 1
+'adak' === 2
 
 amazonCounting(1) // 'anane'
 amazonCounting(2) // 'adak'
