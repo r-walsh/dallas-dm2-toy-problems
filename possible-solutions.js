@@ -96,3 +96,13 @@ function longest(s1, s2) {
   });
   return s4.join("");
 }
+
+//////////////////////////
+
+function createTemplate( template ) {
+  return function( obj ) {
+    return template.replace(/{{(\w+)}}/g, function( matchedString, submatch ) {
+    	return obj[submatch] || '';
+    });
+  }
+}
