@@ -115,3 +115,30 @@ function sortList ( sortBy, list ) {
     return a[sortBy] < b[sortBy];  
   });
 }
+
+///////////////////////////
+
+// recursive
+function arraySum( arr ) {
+  var output = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if ( typeof(arr[i]) === 'number') {
+      output += arr[i];
+    }
+    if ( Array.isArray(arr[i])) {
+      arraySum( arr[i] );
+    }
+  return output;
+}
+
+// non recursive
+function arraySum(arr) {
+  return arr.toString()
+            .split(',')
+            .reduce( function( previousValue, currentValue ) {
+              if ( parseFloat(currentValue) ) {
+                return parseFloat(currentValue) + previousValue;
+              }
+              return previousValue;
+             }, 0);
+}
