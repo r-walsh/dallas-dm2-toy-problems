@@ -142,3 +142,39 @@ function arraySum(arr) {
               return previousValue;
              }, 0);
 }
+
+/////////////////////////////
+function triangle() {
+	var txt = '#######'
+	for (var i = txt.length; i >= 0; i--){
+	  console.log(txt.slice(i))
+	}
+}
+
+function triangle(num) {
+  var str = '';
+  for (var i = num; i >= 1; i--) {
+    str += '#';
+    console.log(str);
+  } 
+  
+}
+
+//////////////////////////////
+
+function isIsogram(str){
+  let splitted = str.toLowerCase().split('');
+  for ( let i = 0; i < splitted.length; i++ ) {
+    if ( splitted.lastIndexOf(splitted[i]) !== i ) {
+      return false;
+    }
+  }
+  return true;
+}
+
+
+function isIsogram(str){ 
+  return !/(\w).*\1/i.test(str)
+}
+
+//////////////////////////////

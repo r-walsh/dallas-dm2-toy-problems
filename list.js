@@ -122,3 +122,27 @@ arraySum([2, 3]) // 5
 arraySum([4, 4, [3, 2]) // 13
 
 */
+
+///////////////////////////////
+
+/*
+write a function that makes a triangle of the character `#`. (it can be a lopsided triangle.) do this without manually writing each line in your code. example result:
+
+#
+##
+###
+####
+#####
+######
+#######
+*/
+
+///////////////////////////////
+
+/*
+An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+isIsogram( "Dermatoglyphics" ) == true
+isIsogram( "aba" ) == false
+isIsogram( "moOse" ) == false // -- ignore letter case
+*/
