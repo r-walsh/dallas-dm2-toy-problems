@@ -178,3 +178,103 @@ function isIsogram(str){
 }
 
 //////////////////////////////
+
+function chain(x, fns) {
+  return fns.reduce(function(x, fn) {
+    return fn(x)
+  }, x)
+}
+
+//////////////////////////////
+
+Array.prototype.square = function() {
+  return this.map( item => Math.pow(item, 2) );
+}
+
+Array.prototype.cube = function() {
+  return this.map( item => Math.pow(item, 3) );
+}
+
+Array.prototype.sum = function() {
+  return this.reduce( ( pv, cur ) => pv + next );
+}
+
+Array.prototype.average = function() {
+  if ( this.length === 0 ) return NaN;
+  
+  return this.sum() / this.length;
+}
+
+Array.prototype.even = function() {
+  return this.filter( item => item % 2 === 0 );
+}
+
+Array.prototype.odd = function() {
+  return this.filter( item => item % 2 !== 0 );
+}
+
+// es5
+
+Array.prototype.square = function() {
+	return this.map(function( item ) {
+		return Math.pow(item, 2);
+	});
+}
+
+Array.prototype.cube = function() {
+	return this.map(function( item ) {
+		return Math.pow(item, 3);
+	});
+}
+
+Array.prototype.sum = function() {
+	return this.reduce(function( pv, cur ) {
+		return pv + cur;
+	});
+}
+
+Array.prototype.average = function() {
+	if ( this.length === 0 ) return NaN;
+
+	return this.sum / this.length;
+}
+
+Array.prototype.even = function() {
+	return this.filter(function( item ) {
+		return item % 2 === 0;
+	});
+}
+
+Array.prototype.odd = function() {
+	return this.filter(function( item ) {
+		return item % 2 !== 0;
+	});
+}
+
+//////////////////////////////
+
+function three( cb ) {
+	if ( !cb ) return 3;
+
+	return cb( 3 );
+}
+
+function five( cb ) {
+	if ( !cb ) return 5;
+
+	return cb( 5 );
+}
+
+function times( numOne ) {
+	return function( numTwo ) {
+		return numOne * numTwo;
+	}
+}
+
+function plus( numOne ) {
+	return function( numTwo ) {
+		return numOne + numTwo;
+	}
+}
+
+//////////////////////////////

@@ -146,3 +146,60 @@ isIsogram( "Dermatoglyphics" ) == true
 isIsogram( "aba" ) == false
 isIsogram( "moOse" ) == false // -- ignore letter case
 */
+
+///////////////////////////////
+/*
+Write a generic function chainer
+
+Write a generic function chainer that takes a starting value, and an array of functions to execute on it (array of symbols for ruby).
+
+The input for each function is the output of the previous function (except the first function, which takes the starting value as it's input). Return the final value after execution is complete.
+
+
+
+function add(num) {
+  return num + 1
+}
+
+function mult(num) {
+  return num * 30
+}
+
+chain(2, [add, mult]);
+// returns 90;
+*/
+
+///////////////////////////////
+
+/*
+we want you to extend the built-in Array class with the following methods: square(), cube(), average(), sum(), even() and odd().
+
+Explanation:
+
+    square() must return a copy of the array, containing all values squared, the original array must not be changed
+    cube() must return a copy of the array, containing all values cubed, the original array must not be changed
+    average() must return the average of all array values, average() on an empty array must return NaN
+    sum() must return the sum of all array values
+    even() must return an array of all even numbers, the original array must not be changed
+    odd() must return an array of all odd numbers, the original array must not be changed
+
+var numbers = [1, 2, 3, 4, 5];
+numbers.square(); // must return [1, 4, 9, 16, 25]
+numbers.cube(); // must return [1, 8, 27, 64, 125]
+numbers.average(); // must return 3
+numbers.sum(); // must return 15
+numbers.even(); // must return [2, 4]
+numbers.odd(); // must return [1, 3, 5]
+
+*/
+
+///////////////////////////////
+
+/*
+
+make the following code work
+
+three(times(five())) // 15
+five(plus(three())) // 8
+
+*/
