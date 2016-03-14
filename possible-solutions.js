@@ -278,3 +278,21 @@ function plus( numOne ) {
 }
 
 //////////////////////////////
+
+function order(words) {
+  if (!words) return '';
+  var wordsArr = words.split(' ');
+  var orderedArr = [];
+
+  for (var i = 0; i < wordsArr.length; i++) {
+    var letters = wordsArr[i].split('');
+    for (var j = 0; j < letters.length; j++) {
+      if (parseInt(letters[j])) {
+        orderedArr[parseInt(letters[j])] = wordsArr[i];
+      }
+    }
+  }
+  return orderedArr.join(' ');
+}
+
+//////////////////////////////
