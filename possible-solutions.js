@@ -296,3 +296,46 @@ function order(words) {
 }
 
 //////////////////////////////
+
+// oh my god please do this
+function rotate(array, n) {
+  n = n % array.length
+  return array.slice(-n).concat(array.slice(0, -n))
+}
+
+// more likely
+function rotate(array,n){
+  if ( n === 0 ) return array;
+  var arr = array.slice();
+  if ( n > 0 ) {
+    for ( var i = 0; i < n; i++ ) {
+      arr.unshift(arr.pop());
+    }
+    return arr;
+  }
+  for ( var i = 0; i > n; i-- ) {
+    arr.push(arr.shift());
+  }
+  return arr;
+}
+
+//////////////////////////////
+
+// non regex:
+function doubleCheck(str){
+  str = str.toLowerCase().split('');
+
+  for ( let i = 0; i < str.length; i++ ) {
+    if ( str[i] === str[i + 1] ) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// with regex:
+function doubleCheck(str){
+  return /(.)\1/i.test(str);
+}
+
+//////////////////////////////
