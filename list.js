@@ -140,7 +140,8 @@ write a function that makes a triangle of the character `#`. (it can be a lopsid
 ///////////////////////////////
 
 /*
-An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. 
+Assume the empty string is an isogram. Ignore letter case.
 
 isIsogram( "Dermatoglyphics" ) == true
 isIsogram( "aba" ) == false
@@ -272,5 +273,53 @@ You want the function to return true if the string contains double characters an
 
   doubleCheck("a!@€£#$%^&*()_-+=}]{[|\"':;?/>.<,~")
   //returns false
+
+///////////////////////////////
+
+/*
+Write a function that takes in two object parameters, 'input' and 'changed'. 'changed' will be an object that roughly matches the structure of the 'input'.
+Your function should update 'input' with the matching properties of 'changed'. Any properties on only one object should be ignored. Arrays should be concatenated. 
+Your function should support any level of nesting.
+*/
+
+var test = {
+    one: true
+  , two: false
+  , three: true
+  , four: {
+    innerOne: true
+    , innerTwo: {
+      deepOne: false
+      , deepTwo: true
+    }
+  }
+  , five: [1, 2, 3, 4]
+};
+
+var changed = {
+  two: true
+  , four: {
+    innerTwo: {
+      deepOne: true
+    }
+  }
+  , five: [5, 6, 7, 8]
+  , six: false
+}
+
+nestSetter(test, changed);
+// output = {
+//   one: true
+//   , two: true
+//   , three: true
+//   , four: {
+//       innerOne: true
+//       , innerTwo: {
+//           deepOne: true
+//         , deepTwo: true
+//     }
+//   }
+//   , five: [1, 2, 3, 4, 5, 6, 7, 8]
+// }
 
 ///////////////////////////////

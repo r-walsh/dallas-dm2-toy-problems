@@ -339,3 +339,19 @@ function doubleCheck(str){
 }
 
 //////////////////////////////
+
+
+function nestSetter(obj, changed) {
+  for (var prop in obj) {
+    if (changed.hasOwnProperty(prop) && typeof obj[prop] !== 'object') {
+      obj[prop] = changed[prop];
+    } else if (changed.hasOwnProperty(prop) && typeof obj[prop] === 'object' && !Array.isArray(obj[prop])) {
+      nestSetter(obj[prop], changed[prop]);
+    } else if (changed.hasOwnProperty(prop) && Array.isArray(obj[prop])) {
+      obj[prop] = obj[prop].concat(changed[prop]);
+    }
+  }
+  return obj;
+}
+
+//////////////////////////////
