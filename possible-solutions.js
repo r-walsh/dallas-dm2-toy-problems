@@ -355,3 +355,87 @@ function nestSetter(obj, changed) {
 }
 
 //////////////////////////////
+
+function flatten( ...args ) {
+  let returnArray = [];
+  for ( let i = 0; i < args.length; i++ ) {
+    if (Array.isArray(args[i])) {
+      returnArray.push(...flatten(...args[i]));
+    } else {
+      returnArray.push(args[i]);
+    }
+  }
+  return returnArray;
+}
+
+//////////////////////////////
+
+function validParentheses(parens){
+  var n = 0;
+  for (var i = 0; i < parens.length; i++) {
+    if (parens[i] == '(') n++;
+    if (parens[i] == ')') n--;
+    if (n < 0) return false;
+  }
+  
+  return n == 0;
+}
+
+//////////////////////////////
+
+Array.prototype.nestedFilter = function( cb ) {
+  let ret = [];
+  for ( let i = 0; i < this.length; i++ ) {
+    if ( Array.isArray(this[i]) ) {
+      ret.push(this[i].nestedFilter( cb ));
+    } else {
+      if ( cb( this[i], i, this ) ) {
+        ret.push(this[i]);
+      }
+    }
+  }
+  return ret;
+}
+
+//////////////////////////////
+
+function formatter( input ) {
+  function innerFormatter( string, arr ) {
+    if ( string ) {
+      let   strArr = string.split('/')
+          , curr = strArr.shift();
+      for ( let i = 0; i < arr.length; i++ ) {
+        if ( arr[i].name === curr ) {
+          return innerFormatter( strArr.join('/'), arr[i].children );
+        }
+      }
+      arr.push({
+          name: curr
+        , children: []
+      });
+      return innerFormatter(strArr.join('/'), arr[arr.length - 1].children)
+    }
+    return arr;
+  }
+  let returnArr = [];
+  input.forEach( string => returnArr.push(innerFormatter( string.name, returnArr )) );
+
+  return returnArr.filter( element => element.length !== 0 );
+}
+
+//////////////////////////////
+
+function humanReadable(seconds) {
+  var hours = parseInt( seconds / 3600 ) ;
+  var minutes = parseInt( seconds / 60 ) % 60;
+  var seconds = seconds % 60;
+
+  var pad = function(val){
+    return val < 10 ?"0"+val:val;
+  }
+
+  return pad(hours) + ":" +pad(minutes) + ":" + pad(seconds);
+}
+
+//////////////////////////////
+

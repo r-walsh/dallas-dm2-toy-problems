@@ -323,3 +323,105 @@ nestSetter(test, changed);
 // }
 
 ///////////////////////////////
+
+/*
+
+For this exercise you will create a flatten function. 
+The function takes in any number of arguments and flattens them 
+into a single array. If any of the arguments passed in are an 
+array then the individual objects within the array will be flattened 
+so that they exist at the same level as the other arguments. 
+Any nested arrays, no matter how deep, should be flattened into the 
+single array result.
+
+The following are examples of how this function would be used and 
+what the expected results would be:
+
+*/
+
+flatten(1, [2, 3], 4, 5, [6, [7]]) // returns [1, 2, 3, 4, 5, 6, 7]
+flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 4, 'c']
+
+///////////////////////////////
+/*
+Write a function called validParentheses that takes a string of parentheses, and determines if the order of the parentheses is valid. validParentheses should return true if the string is valid, and false if it's invalid.
+
+Examples:
+validParentheses( "()" ) => returns true
+validParentheses( ")(()))" ) => returns false
+validParentheses( "(" ) => returns false
+validParentheses( "(())((()())())" ) => returns true 
+*/
+
+///////////////////////////////
+
+Write a new nestedFilter method on the Array prototype, it should work the same as filter, 
+but work on all nested arrays within the initial array.
+
+[false, true, [true, false, false], true].nestedFilter( item => item ); // returns [true, [true], true]
+[2, 4, 8, 7, [9, 12, 13, 99, [87, 64, 3022]]].nestedFilter( item => item % 2 === 0); // returns [2, 4, 8, [12, [64, 3022]]]
+
+///////////////////////////////
+
+Write a function that takes in an array of objects, each with a name property, and creates a new array
+of objects based on their structure. The strings will be seperated by '/''s.
+
+Example:
+
+var data = [
+  {
+    name: 'App/AFCU/sanity'
+  },
+  {
+    name: 'App/AFCU/product/'
+  },
+  {
+    name: 'Mobile/somethingElse/'
+  }
+];
+
+formatter( data )
+//returns 
+[
+  {
+      name: 'App'
+    , children: [
+        {
+            name: 'AFCU'
+          , children: [
+              {
+                name: 'sanity'
+              }
+              , {
+                name: 'product'
+              }
+            ]
+        }
+      ]
+  }
+  , {
+    name: 'Mobile'
+    , children: [{ name: 'somethingElse' }]
+  }
+]
+
+///////////////////////////////
+
+/*
+Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
+
+    HH = hours, padded to 2 digits, range: 00 - 99
+    MM = minutes, padded to 2 digits, range: 00 - 59
+    SS = seconds, padded to 2 digits, range: 00 - 59
+
+The maximum time never exceeds 359999 (99:59:59)
+*/
+
+humanReadable(0) // '00:00:00'
+humanReadable(5) // '00:00:05'
+humanReadable(60) // '00:01:00'
+humanReadable(86399) // '23:59:59'
+humanReadable(359999) // '99:59:59'
+
+///////////////////////////////
+
