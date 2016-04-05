@@ -439,3 +439,24 @@ function humanReadable(seconds) {
 
 //////////////////////////////
 
+Math.round = function(number) {
+  if ( number.toString().indexOf('.') === -1 ) return number;
+
+  if ( parseFloat('.' + number.toString().split('.')[1]) >= .5 ) {
+    return Math.ceil(number);
+  }
+
+  return Math.floor(number);
+};
+
+Math.ceil = function(number) {
+  if ( number.toString().indexOf('.') === -1 ) return number;
+
+  return parseInt(number.toString().split('.')[0]) + 1;
+};
+
+Math.floor = function(number) {
+  return parseInt(number.toString().split('.')[0]);
+};
+
+//////////////////////////////
