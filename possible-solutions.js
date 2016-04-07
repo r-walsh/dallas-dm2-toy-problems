@@ -460,3 +460,26 @@ Math.floor = function(number) {
 };
 
 //////////////////////////////
+
+Array.prototype.groupBy = function( fn ) {
+  let grouped = {};
+
+  if ( !fn ) {
+    this.forEach( item => grouped.hasOwnProperty( item ) ? grouped[item].push( item ) : grouped[item] = [item]);
+  } else {
+    this.forEach( item => grouped.hasOwnProperty( fn( item ) ) ? grouped[fn( item )].push( item ) : grouped[ fn( item )] = [item]);
+  }
+
+  return grouped;
+}
+
+Array.prototype.groupBy = function(fn) {
+  if (fn == null) fn = function(x) { return x }
+  return this.reduce(function(groups, val) {
+    var key = fn(val)
+    groups[key] ? groups[key].push(val) : groups[key] = [val]
+    return groups
+  }, {})
+}
+
+//////////////////////////////
