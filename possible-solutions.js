@@ -483,3 +483,12 @@ Array.prototype.groupBy = function(fn) {
 }
 
 //////////////////////////////
+
+function nouveau ( Constructor, ...args ) {
+  let instance = Object.create( Constructor.prototype );
+  let ret = Constructor.apply( instance, args );
+
+  return ret === Object( ret ) ? ret : instance;
+}
+
+//////////////////////////////
