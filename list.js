@@ -517,3 +517,38 @@ Your mission: write a function nouveau (that's French for "new") which takes one
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
  */
+
+///////////////////////////////
+
+/*
+
+Write a function format that takes two arguments, text and width, and formats the text to fit the width.
+
+Your function should divide the given text into lines using newline characters. It should fit as many words into each line as possible without exceeding the given width or splitting any words between two lines. There should not be a space at the beginning or end of any line. For example, here is some text formatted with a width of 50:
+
+Lorem ipsum dolor sit amet, consectetur adipiscing
+elit. Aliquam nec consectetur risus. Cras vel urna
+a tellus dapibus consequat. Duis bibendum
+tincidunt viverra. Phasellus dictum efficitur sem
+quis porttitor. Mauris luctus auctor diam id
+ultrices. Praesent laoreet in enim ut placerat.
+Praesent a facilisis turpis.
+
+
+
+And the same text formatted with a width of 30:
+
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
+Aliquam nec consectetur risus.
+Cras vel urna a tellus dapibus
+consequat. Duis bibendum
+tincidunt viverra. Phasellus
+dictum efficitur sem quis
+porttitor. Mauris luctus
+auctor diam id ultrices.
+Praesent laoreet in enim ut
+placerat. Praesent a facilisis
+turpis.
+
+*/

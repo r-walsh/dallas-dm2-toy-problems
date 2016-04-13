@@ -492,3 +492,28 @@ function nouveau ( Constructor, ...args ) {
 }
 
 //////////////////////////////
+
+function format(text, width) {
+  let textArr = text.split(' ');
+  let currentLineLength = 0;
+  let formatted = [[]];
+  let formattedIndex = 0;
+
+  for ( let i = 0; i < textArr.length; i++ ) {
+    if ( (textArr[i].length + currentLineLength) > width ) {
+      formatted[formattedIndex] = formatted[formattedIndex].join(' ');
+      formatted.push([]);
+      formattedIndex++;
+      currentLineLength = 0;
+    }
+    formatted[formattedIndex].push(textArr[i]);
+    currentLineLength += textArr[i].length + 1;
+  }
+
+  if ( Array.isArray(formatted[formattedIndex]) ) {
+    formatted[formattedIndex] = formatted[formattedIndex].join(' ');
+  }
+  return formatted.join('\n');
+}
+
+//////////////////////////////
