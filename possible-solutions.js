@@ -517,3 +517,25 @@ function format(text, width) {
 }
 
 //////////////////////////////
+
+function max( arr, iteratee ) {
+  
+    let value, computed, result = -Infinity, lastComputed = -Infinity;
+    if (!iteratee) {
+      for (let i = 0, length = arr.length; i < length; i++) {
+        value = arr[i];
+        if (value != null && value > result) {
+          result = value;
+        }
+      }
+    } else {
+      for ( let i = 0, length = arr.length; i < length; i++ ) {
+         computed = iteratee(arr[i]);
+        if ( iteratee(arr[i]) > lastComputed ) {
+           result = arr[i];
+           lastComputed = computed;
+        }
+      }
+   }
+    return result;
+  }
