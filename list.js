@@ -581,3 +581,12 @@ dayAndTime(-349000) // should return 'Tuesday 15:20'
 
 ///////////////////////////////
 
+/*
+As a crude form of hashing function, Lars wants to sum the digits of a number. 
+Then he wants to sum the digits of the result, and repeat until he have only one digit left.
+*/
+
+digitSum( 31337 ) // 8
+digitSum( 1073741824 ) // 1
+
+///////////////////////////////
