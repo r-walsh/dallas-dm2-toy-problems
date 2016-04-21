@@ -549,4 +549,19 @@ function dayAndTime( minutes ) {
     return `${daysOfWeek[date.getDay()]} ${formatNumber(date.getHours())}:${formatNumber(date.getMinutes())}`;
 }
 
-formatNumber( number ) (number < 10 ? "0" : "") + number;
+function formatNumber( number ) { return (number < 10 ? "0" : "") + number };
+
+//////////////////////////////
+
+function digitSum( num ) {
+  let sum = num.toString().split('').reduce( ( a, b ) => parseInt( a ) + parseInt( b ));
+
+  return sum < 10 ? sum : digitSum( sum );
+}
+
+// better
+function digitSum( n ) {
+    return n < 10 ? n : digitSum(Math.floor(n / 10) + (n % 10));
+} 
+
+//////////////////////////////
