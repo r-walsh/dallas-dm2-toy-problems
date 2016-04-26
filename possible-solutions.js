@@ -565,3 +565,40 @@ function digitSum( n ) {
 } 
 
 //////////////////////////////
+
+function search( haystack, needle ) {
+  let result = [];
+
+  function needleFinder( obj, str = '' ) {
+    for ( let prop in obj ) {
+      if ( typeof obj[ prop ] === 'string' && obj[ prop ].indexOf( needle ) !== -1 ) {
+        result.push( str.length ? str + '.' + prop : prop );
+      }
+      if ( typeof obj[ prop ] === 'object' ) {
+        needleFinder( obj[ prop ], str.length ? str + '.' + prop : prop )
+      }
+    }
+  }
+  needleFinder( haystack );
+  return result.sort();
+}
+
+//////////////////////////////
+
+function zebulansNightmare(functionName) {
+  var output = '';
+  
+  for(var i = 0; i < functionName.length; i++){
+    var cur = functionName[i];
+    if(cur !== '_')
+      output += cur;
+    else {
+      output += functionName[i+1].toUpperCase();
+      i++;
+    }
+  }
+  
+  return output;
+}
+
+//////////////////////////////

@@ -590,3 +590,40 @@ digitSum( 31337 ) // 8
 digitSum( 1073741824 ) // 1
 
 ///////////////////////////////
+
+/*
+Find the needle(s) in a haystack by creating a function that returns all 
+properties (recursively) which contains the needle (string).
+
+Return value should be a sorted array.
+*/
+
+var obj = {
+  site: "Codewars",
+  description: "Lorem ipsum dolor sit...",
+  obj2: {
+    str: "Yeah, Codewars!",
+    num: 123,
+    obj3: {
+      something: "Ph'nglui mglw'nafh Codewars R'lyeh wgah'nagl fhtagn. Gotha fm'latgh h'gof'nn, geb chtenff"
+    }
+  }
+};
+var results = search(obj, "Codewars"); //results = ["obj2.obj3.something", "obj2.str", "site"]
+
+///////////////////////////////
+
+/*
+Zebulan has worked hard to write all his python code in strict compliance to PEP8 rules. 
+In this kata, you are a mischevious hacker that has set out to sabatoge all his good code.
+
+Your job is to take PEP8 compatible function names and convert them to camelCase. For example:
+*/
+
+zebulansNightmare('camel_case') == 'camelCase'
+zebulansNightmare('zebulans_nightmare') == 'zebulansNightmare'
+zebulansNightmare('get_string') == 'getString'
+zebulansNightmare('convert_to_uppercase') == 'convertToUppercase'
+zebulansNightmare('main') == 'main'
+
+///////////////////////////////
