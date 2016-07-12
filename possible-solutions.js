@@ -602,3 +602,24 @@ function zebulansNightmare(functionName) {
 }
 
 //////////////////////////////
+
+function sc(obj){
+  const iterable = Array.isArray( obj ) ? obj : String( obj ).split("");
+  
+  for ( let i = 0, j = iterable.length - 1; i < iterable.length; i++, j-- ) {
+    if ( iterable[ i ] !== iterable[ j ] ) {
+      return false;
+    }
+  }
+    return true;
+}
+
+
+function sc(arr) {
+  if (!Array.isArray(arr)){
+    arr = (arr + "").split("");
+  }
+  return arr + "" == arr.reverse() + "";
+}
+
+//////////////////////////////
